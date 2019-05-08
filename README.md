@@ -12,7 +12,7 @@ This is what users will see when they pull your project locally and try to run `
 
 ### If they're on a lower version (v4.0.0 vs v10.15.1)
 
-```bash
+```
 You are using Node.js version 4.0.0 which we do not support. 
 
 Please install Node.js version 10.15.1 and try again.
@@ -22,7 +22,7 @@ To do this you can install nvm (https://github.com/nvm-sh/nvm) then run `nvm ins
 
 ### If they're close to the same version (v10.0.0 vs v10.15.1))
 
-```bash
+```
 Warning: You are using Node.js version 10.0.0 which we do not use. 
 
 You may encounter issues, consider installing Node.js version 10.15.1.

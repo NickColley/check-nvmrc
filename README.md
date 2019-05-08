@@ -6,11 +6,29 @@ This is useful if you have external contributors, because they may get a difficu
 
 Note: This project promotes [nvm](https://github.com/nvm-sh/nvm) but you don't need to use nvm to use this approach, it just helps.
 
-## Screenshots
+## Output
 
-### If someone is on a lower version
+This is what users will see when they pull your project locally and try to run `npm install` or `npm start`
 
-### blah
+### If they're on a lower version (v4.0.0 vs v10.15.1)
+
+```bash
+You are using Node.js version 4.0.0 which we do not support. 
+
+Please install Node.js version 10.15.1 and try again.
+
+To do this you can install nvm (https://github.com/nvm-sh/nvm) then run `nvm install`.
+```
+
+### If they're close to the same version (v10.0.0 vs v10.15.1))
+
+```bash
+Warning: You are using Node.js version 10.0.0 which we do not use. 
+
+You may encounter issues, consider installing Node.js version 10.15.1.
+
+To do this you can install nvm (https://github.com/nvm-sh/nvm) then run `nvm install`.
+```
 
 ## How to install
 
@@ -45,8 +63,12 @@ The repostiory has a file called [.nvmrc](./.nvmrc) which the agreed version of 
 
 It is references a tool called `nvm` (Node Version Manager) that you can use to install different versions of Node.js
 
-A standalone script will check the current version of Node.js being used against `.nvmrc` and warn people if they're not using the right version.
+A standalone script will check the current version of Node.js being used against `.nvmrc` and warn people if they're not using the right version. This script is written with ye ol' JavaScript that works in really old Node.js versions.
 
 ## Why isn't this an npm dependency?
 
 Older versions of Node.js can't npm install a newer projects files. So the script is written to work in older versions of Node.js without having any dependencies installed.
+
+## I don't like something
+
+It's just some crap scripts feel free to change it, if you think there's a mistake or something that'd be useful feel free to do a pull request though.

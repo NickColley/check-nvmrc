@@ -17,7 +17,7 @@ fs.readFile(path.join(__dirname, '../.nvmrc'), 'utf8', function (error, data) {
     process.exit()
   }
 
-  var nvmInstallText = 'To do this you can install nvm (https://github.com/creationix/nvm) then run `nvm install`.'
+  var nvmInstallText = 'To do this you can install nvm (https://github.com/nvm-sh/nvm) then run `nvm install`.'
 
   if (versionMatchesMajor) {
     console.log('' +

@@ -1,2 +1,52 @@
 # check-nvmrc
-Repository showing how to use a standalone Node.js script to let people know they're on the wrong Node.js version
+
+Repository showing how to use a standalone Node.js script to let people know they're on the wrong Node.js version.
+
+This is useful if you have external contributors, because they may get a difficult to understand error message if they try to install your project on an old version of Node.js.
+
+Note: This project promotes [nvm](https://github.com/nvm-sh/nvm) but you don't need to use nvm to use this approach, it just helps.
+
+## Screenshots
+
+### If someone is on a lower version
+
+### blah
+
+## How to install
+
+This repository has all the files necessary for this to work, here are the individual steps if you want them:
+
+1. Copy [bin/check-nvmrc.js](./bin/check-nvmrc.js) into your project.
+2. Copy [.nvmrc](./.nvmrc) into your project, and change the version to what you are using.
+3. Add `preinstall` and `prestart` scripts to your [package.json](./package.json)
+
+```json
+{
+  "scripts": {
+    "preinstall": "node bin/check-nvmrc.js",
+    "prestart": "node bin/check-nvmrc.js"
+  }
+}
+```
+
+
+4. (Optional) add an engines entry to package.json:
+
+```json
+{
+  "engines": {
+    "node": "10.15.1"
+  },
+}
+```
+
+## How's it work
+The repostiory has a file called [.nvmrc](./.nvmrc) which the agreed version of Node.js to use for the team.
+
+It is references a tool called `nvm` (Node Version Manager) that you can use to install different versions of Node.js
+
+A standalone script will check the current version of Node.js being used against `.nvmrc` and warn people if they're not using the right version.
+
+## Why isn't this an npm dependency?
+
+Older versions of Node.js can't npm install a newer projects files. So the script is written to work in older versions of Node.js without having any dependencies installed.

@@ -7,12 +7,11 @@ var path = require('path')
 
 fs.readFile(path.join(__dirname, '../.nvmrc'), 'utf8', function (error, data) {
   if (error) throw error
-  var expectedVersion = data.trim()
+  var expectedVersion = data.trim().replace('v', '')
   var currentVersion = process.version.replace('v', '')
 
   var versionMatchesExactly = expectedVersion === currentVersion
   var versionMatchesMajor = expectedVersion.split('.')[0] === currentVersion.split('.')[0]
-
   if (versionMatchesExactly) {
     process.exit()
   }

@@ -63,7 +63,7 @@ The repostiory has a file called [.nvmrc](./.nvmrc) which the agreed version of 
 
 It is references a tool called `nvm` (Node Version Manager) that you can use to install different versions of Node.js
 
-A standalone script will check the current version of Node.js being used against `.nvmrc` and warn people if they're not using the right version. This script is written with ye ol' JavaScript that works in really old Node.js versions.
+A standalone script will check the current version of Node.js being used against `.nvmrc` and warn people if they're not using the right version. This script is written with ES3/5 JavaScript that works in really old Node.js versions.
 
 ## Why isn't this an npm dependency?
 

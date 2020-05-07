@@ -68,7 +68,3 @@ A standalone script will check the current version of Node.js being used against
 ## Why isn't this an npm dependency?
 
 Older versions of Node.js can't npm install a newer projects files. So the script is written to work in older versions of Node.js without having any dependencies installed.
-
-## I don't like something
-
-It's just some crap scripts feel free to change it, if you think there's a mistake or something that'd be useful feel free to do a pull request though.
